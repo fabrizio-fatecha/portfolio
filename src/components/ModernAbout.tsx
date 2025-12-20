@@ -11,7 +11,7 @@ export const ModernAbout: React.FC = () => {
   return (
     <section id="about" className="py-0 relative">
 
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 ">
 
 
         <motion.div

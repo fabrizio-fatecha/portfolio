@@ -151,7 +151,8 @@ export const ModernHero: React.FC = () => {
             </span>
           </div>
         </motion.div>
-
+        
+        <div style={{marginTop: "60px"}}>
         {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -160,7 +161,7 @@ export const ModernHero: React.FC = () => {
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 50, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
             className="w-6 h-10 border-2 border-white/20 rounded-full flex items-start justify-center p-2"
           >
@@ -171,6 +172,8 @@ export const ModernHero: React.FC = () => {
             />
           </motion.div>
         </motion.div>
+
+        </div>
       </div>
     </section>
   );

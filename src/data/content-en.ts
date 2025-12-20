@@ -150,7 +150,7 @@ export const contentEn = {
         company: "ITTI S.A.E.C.A",
         description: "Backoffice system for support analysts with modern and scalable architecture.",
         impact: "High internal impact",
-        image: "/public/images/itti_logo.png",
+        image: "./images/itti_logo.png",
         technologies: ["NestJS", "React", "MUI", "Docker", "OracleDB", "PLSQL", "GitHub", "TypeScript", "Docker", "Nginx","Figma", "Postman", "JIRA"],
         highlights: [
           "Robust backend architecture with NestJS",
@@ -165,7 +165,7 @@ export const contentEn = {
         company: "Social Security Institute",
         description: "$5M USD government project for critical systems modernization.",
         impact: "Budget: $5,000,000 USD",
-        image: "/public/images/vitalics.png",
+        image: "./images/vitalics.png",
         technologies: ["NestJS", "React", "MUI", "Node.js + Express", "TypeScript", "PostgreSQL", "Docker", "Nginx", "Azure", "Figma", "Postman"],
         highlights: [
           "Critical systems for government institution",
@@ -180,7 +180,7 @@ export const contentEn = {
         company: "Neighpart S.A.E.C.A",
         description: "Complete management of Odoo ERP system with custom module development and CI/CD.",
         impact: "Complete enterprise system",
-        image: "/public/images/neighpart.png",
+        image: "./images/neighpart.png",
         technologies: ["Odoo", "Python", "XML", "PostgreSQL", "Git", "GitHub", "Linux", "Docker"],
         highlights: [
           "Custom module development",

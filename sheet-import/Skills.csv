@@ -1,0 +1,24 @@
+category,items
+Languages,"JavaScript
+PL/SQL
+SQL
+TypeScript
+Flutter
+Python
+Bash"
+Frameworks,"NestJS
+Vite"
+Databases,"PostgreSQL
+MySQL
+Redis
+MongoDB"
+Cloud & DevOps,"AWS (EC2, S3, Lambda)
+Azure (App Service, Blob Storage, Functions)
+Docker
+CI/CD (GitHub Actions)"
+Tools & Others,"Git
+REST APIs
+Postman
+Node
+Jest
+Linux"

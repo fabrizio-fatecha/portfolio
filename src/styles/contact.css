@@ -1,0 +1,22 @@
+.contact {
+  border-top: 1px solid var(--border);
+  padding: 3rem 0;
+  margin-top: 1rem;
+}
+
+.contact-inner {
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 1.4rem;
+  margin: 0 0 1.2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 1rem;
+}

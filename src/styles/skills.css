@@ -1,0 +1,33 @@
+.skills-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.skills-category {
+  font-size: 0.95rem;
+  margin: 0 0 0.6rem;
+  color: var(--muted);
+}
+
+.skills-tags {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

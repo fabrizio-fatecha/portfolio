@@ -1,0 +1,27 @@
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cert-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.cert-name {
+  font-size: 0.95rem;
+}
+
+.cert-issuer {
+  color: var(--muted);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}

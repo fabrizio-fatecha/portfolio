@@ -1,25 +1,14 @@
 import { useReveal } from "../hooks/useReveal.js";
-import Expandable from "./Expandable.jsx";
+import { useToggle } from "../hooks/useToggle.js";
+import ChevronIcon from "../lib/ChevronIcon.jsx";
+import EyeIcon from "../lib/EyeIcon.jsx";
+import "../styles/accordion.css";
 import "../styles/certifications.css";
-
-const PREVIEW_COUNT = 5;
-
-function CertItem({ cert }) {
-  return (
-    <li className="cert-item">
-      <span className="cert-name">{cert.name}</span>
-      {cert.issuer && <span className="cert-issuer">{cert.issuer}</span>}
-    </li>
-  );
-}
 
 export default function Certifications({ certifications }) {
   const reveal = useReveal();
+  const [expanded, toggle] = useToggle(false);
   if (!certifications?.length) return null;
-
-  const hasMore = certifications.length > PREVIEW_COUNT;
-  const preview = certifications.slice(0, PREVIEW_COUNT);
-  const extra = certifications.slice(PREVIEW_COUNT);
 
   return (
     <section
@@ -28,20 +17,42 @@ export default function Certifications({ certifications }) {
       ref={reveal.ref}
     >
       <h2 className="section-title">Certifications</h2>
-      <ul className="cert-list">
-        {preview.map((cert) => (
-          <CertItem cert={cert} key={cert.name} />
-        ))}
-      </ul>
-      {hasMore && (
-        <Expandable count={extra.length} moreLabel="more">
+      <button
+        type="button"
+        className="accordion-trigger cert-toggle"
+        onClick={toggle}
+        aria-expanded={expanded}
+      >
+        <span>
+          {expanded ? "Hide certificates" : `Show ${certifications.length} certificates`}
+        </span>
+        <ChevronIcon expanded={expanded} />
+      </button>
+      <div className={`expandable${expanded ? " expanded" : ""}`}>
+        <div className="expandable-inner">
           <ul className="cert-list">
-            {extra.map((cert) => (
-              <CertItem cert={cert} key={cert.name} />
+            {certifications.map((cert) => (
+              <li className="cert-item" key={cert.name}>
+                <span className="cert-name">{cert.name}</span>
+                <span className="cert-meta">
+                  {cert.issuer && <span className="cert-issuer">{cert.issuer}</span>}
+                  {cert.url && (
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="cert-view"
+                      aria-label={`View ${cert.name} certificate`}
+                    >
+                      <EyeIcon />
+                    </a>
+                  )}
+                </span>
+              </li>
             ))}
           </ul>
-        </Expandable>
-      )}
+        </div>
+      </div>
     </section>
   );
 }

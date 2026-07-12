@@ -2,8 +2,8 @@
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -14,7 +14,6 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  min-width: 160px;
 }
 
 .lang-name {
@@ -24,4 +23,12 @@
 .lang-level {
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+/* Above phone width, distribute the items evenly across one row: 2 items
+   split 50/50, 3 items 33/33/33, etc, based on the actual count. */
+@media (min-width: 480px) {
+  .lang-list {
+    grid-template-columns: repeat(var(--lang-count, 1), 1fr);
+  }
 }

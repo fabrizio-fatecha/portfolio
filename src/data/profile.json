@@ -96,14 +96,14 @@
     }
   ],
   "certifications": [
-    { "name": "Microsoft Azure Administrator Associate", "issuer": "" },
-    { "name": "Serverless Framework Guide: API Gateway, AWS & Node.js", "issuer": "" },
-    { "name": "NGINX Fundamentals: High Performance Servers from Scratch", "issuer": "" },
-    { "name": "GIT + GitHub: A Complete Version Control System from Scratch", "issuer": "" },
-    { "name": "Learn Oracle PL/SQL from Scratch", "issuer": "" },
-    { "name": "Python TOTAL - Advanced Programmer in 16 Days", "issuer": "" },
-    { "name": "Odoo: Complete Development Course for Programmers", "issuer": "" },
-    { "name": "Internet Computer Networks Course", "issuer": "" }
+    { "name": "Microsoft Azure Administrator Associate", "issuer": "", "url": "" },
+    { "name": "Serverless Framework Guide: API Gateway, AWS & Node.js", "issuer": "", "url": "" },
+    { "name": "NGINX Fundamentals: High Performance Servers from Scratch", "issuer": "", "url": "" },
+    { "name": "GIT + GitHub: A Complete Version Control System from Scratch", "issuer": "", "url": "" },
+    { "name": "Learn Oracle PL/SQL from Scratch", "issuer": "", "url": "" },
+    { "name": "Python TOTAL - Advanced Programmer in 16 Days", "issuer": "", "url": "" },
+    { "name": "Odoo: Complete Development Course for Programmers", "issuer": "", "url": "" },
+    { "name": "Internet Computer Networks Course", "issuer": "", "url": "" }
   ],
   "languages": [
     { "language": "Spanish", "level": "Native" },

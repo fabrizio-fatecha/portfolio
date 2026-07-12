@@ -1,9 +1,9 @@
-name,issuer
-Microsoft Azure Administrator Associate,
-"Serverless Framework Guide: API Gateway, AWS & Node.js",
-NGINX Fundamentals: High Performance Servers from Scratch,
-GIT + GitHub: A Complete Version Control System from Scratch,
-Learn Oracle PL/SQL from Scratch,
-Python TOTAL - Advanced Programmer in 16 Days,
-Odoo: Complete Development Course for Programmers,
-Internet Computer Networks Course,
+name,issuer,url
+Microsoft Azure Administrator Associate,,
+"Serverless Framework Guide: API Gateway, AWS & Node.js",,
+NGINX Fundamentals: High Performance Servers from Scratch,,
+GIT + GitHub: A Complete Version Control System from Scratch,,
+Learn Oracle PL/SQL from Scratch,,
+Python TOTAL - Advanced Programmer in 16 Days,,
+Odoo: Complete Development Course for Programmers,,
+Internet Computer Networks Course,,

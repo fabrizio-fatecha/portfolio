@@ -24,13 +24,25 @@
 
 .exp-company {
   color: var(--accent);
-  margin: 0.2rem 0 0.8rem;
+  margin: 0.2rem 0 1rem;
   font-size: 0.95rem;
+}
+
+.exp-toggle {
+  width: auto;
+  display: inline-flex;
+  color: var(--accent);
+  font-size: 0.88rem;
+  gap: 0.4rem;
+}
+
+.exp-toggle:hover {
+  text-decoration: underline;
 }
 
 .exp-highlights {
   margin: 0;
-  padding-left: 1.1rem;
+  padding: 1rem 0 0 1.1rem;
   color: var(--muted);
 }
 

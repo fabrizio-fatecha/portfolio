@@ -1,13 +1,11 @@
 import { useReveal } from "../hooks/useReveal.js";
-import Expandable from "./Expandable.jsx";
+import { useToggle } from "../hooks/useToggle.js";
+import ChevronIcon from "../lib/ChevronIcon.jsx";
+import "../styles/accordion.css";
 import "../styles/experience.css";
 
-const PREVIEW_COUNT = 4;
-
 function ExperienceEntry({ job }) {
-  const hasMore = job.highlights.length > PREVIEW_COUNT;
-  const preview = job.highlights.slice(0, PREVIEW_COUNT);
-  const extra = job.highlights.slice(PREVIEW_COUNT);
+  const [expanded, toggle] = useToggle(false);
 
   return (
     <article className="exp-item">
@@ -22,20 +20,24 @@ function ExperienceEntry({ job }) {
         {job.location && ` · ${job.location}`}
         {job.mode && ` · ${job.mode}`}
       </p>
-      <ul className="exp-highlights">
-        {preview.map((point, i) => (
-          <li key={i}>{point}</li>
-        ))}
-      </ul>
-      {hasMore && (
-        <Expandable count={extra.length} moreLabel="points">
+      <button
+        type="button"
+        className="accordion-trigger exp-toggle"
+        onClick={toggle}
+        aria-expanded={expanded}
+      >
+        <span>{expanded ? "Hide details" : "Show details"}</span>
+        <ChevronIcon expanded={expanded} />
+      </button>
+      <div className={`expandable${expanded ? " expanded" : ""}`}>
+        <div className="expandable-inner">
           <ul className="exp-highlights">
-            {extra.map((point, i) => (
+            {job.highlights.map((point, i) => (
               <li key={i}>{point}</li>
             ))}
           </ul>
-        </Expandable>
-      )}
+        </div>
+      </div>
     </article>
   );
 }

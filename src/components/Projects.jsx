@@ -1,28 +1,26 @@
 import { useReveal } from "../hooks/useReveal.js";
+import { useToggle } from "../hooks/useToggle.js";
+import ChevronIcon from "../lib/ChevronIcon.jsx";
 import Expandable from "./Expandable.jsx";
+import "../styles/accordion.css";
 import "../styles/projects.css";
 
 const PREVIEW_COUNT = 3;
 
 function ProjectCard({ project }) {
+  const [expanded, toggle] = useToggle(false);
+
   return (
     <article className="proj-item">
-      <div className="proj-head">
+      <button
+        type="button"
+        className="accordion-trigger proj-head"
+        onClick={toggle}
+        aria-expanded={expanded}
+      >
         <h3 className="proj-name">{project.name}</h3>
-        <div className="proj-links">
-          {project.url && (
-            <a href={project.url} target="_blank" rel="noreferrer">
-              Live
-            </a>
-          )}
-          {project.repo && (
-            <a href={project.repo} target="_blank" rel="noreferrer">
-              Code
-            </a>
-          )}
-        </div>
-      </div>
-      <p className="proj-desc">{project.description}</p>
+        <ChevronIcon expanded={expanded} />
+      </button>
       {project.stack?.length > 0 && (
         <ul className="proj-stack">
           {project.stack.map((tech) => (
@@ -30,6 +28,25 @@ function ProjectCard({ project }) {
           ))}
         </ul>
       )}
+      <div className={`expandable${expanded ? " expanded" : ""}`}>
+        <div className="expandable-inner">
+          <p className="proj-desc">{project.description}</p>
+          {(project.url || project.repo) && (
+            <div className="proj-links">
+              {project.url && (
+                <a href={project.url} target="_blank" rel="noreferrer">
+                  Live
+                </a>
+              )}
+              {project.repo && (
+                <a href={project.repo} target="_blank" rel="noreferrer">
+                  Code
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
     </article>
   );
 }

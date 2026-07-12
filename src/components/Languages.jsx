@@ -11,7 +11,10 @@ export default function Languages({ languages }) {
       ref={reveal.ref}
     >
       <h2 className="section-title">Languages</h2>
-      <ul className="lang-list">
+      <ul
+        className="lang-list"
+        style={{ "--lang-count": languages.length }}
+      >
         {languages.map((lang) => (
           <li className="lang-item" key={lang.language}>
             <span className="lang-name">{lang.language}</span>

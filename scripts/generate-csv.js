@@ -81,8 +81,8 @@ write("Education", [
 ]);
 
 write("Certifications", [
-  ["name", "issuer"],
-  ...data.certifications.map((c) => [c.name, c.issuer]),
+  ["name", "issuer", "url"],
+  ...data.certifications.map((c) => [c.name, c.issuer, c.url]),
 ]);
 
 write("Languages", [

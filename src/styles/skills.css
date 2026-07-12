@@ -9,11 +9,15 @@
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1.25rem;
-  transition: border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    transform 0.25s ease;
 }
 
 .skills-card:hover {
   border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .skills-card-head {
@@ -33,7 +37,7 @@
 }
 
 .skills-category {
-  font-size: 0.95rem;
+  font-size: var(--text-base);
   margin: 0;
   color: var(--text);
 }

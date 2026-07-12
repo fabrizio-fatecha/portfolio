@@ -12,7 +12,7 @@
 }
 
 .exp-role {
-  font-size: 1.15rem;
+  font-size: var(--text-lg);
   margin: 0;
 }
 
@@ -25,15 +25,18 @@
 .exp-company {
   color: var(--accent);
   margin: 0.2rem 0 1rem;
-  font-size: 0.95rem;
+  font-size: var(--text-base);
 }
 
 .exp-toggle {
   width: auto;
   display: inline-flex;
+  align-items: center;
   color: var(--accent);
   font-size: 0.88rem;
   gap: 0.4rem;
+  padding: 0.65rem 0;
+  margin: -0.65rem 0;
 }
 
 .exp-toggle:hover {

@@ -4,12 +4,14 @@
   border-radius: var(--radius);
   padding: 0.85rem 1.1rem;
   color: var(--accent);
-  font-size: 0.95rem;
-  transition: border-color 0.25s ease;
+  font-size: var(--text-base);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cert-toggle:hover {
   border-color: var(--accent);
+  box-shadow: var(--shadow-md);
 }
 
 .cert-list {
@@ -29,15 +31,17 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  transition: border-color 0.25s ease;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cert-item:hover {
   border-color: var(--accent);
+  box-shadow: var(--shadow-md);
 }
 
 .cert-name {
-  font-size: 0.95rem;
+  font-size: var(--text-base);
 }
 
 .cert-meta {
@@ -49,13 +53,17 @@
 
 .cert-issuer {
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   white-space: nowrap;
 }
 
 .cert-view {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: var(--muted);
+  padding: 0.85rem;
+  margin-block: -0.85rem;
   transition: color 0.2s ease;
 }
 

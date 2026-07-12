@@ -11,24 +11,42 @@
   text-align: center;
 }
 
+.header-name,
+.header-title,
+.header-meta {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: header-in 0.7s ease forwards;
+}
+
 .header-name {
   font-size: clamp(1.9rem, 5vw, 2.8rem);
   margin: 0 0 0.5rem;
+  animation-delay: 0.05s;
 }
 
 .header-title {
   font-size: 1.15rem;
   color: var(--accent);
   margin: 0 0 1rem;
+  animation-delay: 0.18s;
 }
 
 .header-meta {
   color: var(--muted);
   margin: 0;
   font-size: 0.95rem;
+  animation-delay: 0.3s;
 }
 
 .header-meta .dot {
   margin: 0 0.6rem;
   opacity: 0.6;
+}
+
+@keyframes header-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

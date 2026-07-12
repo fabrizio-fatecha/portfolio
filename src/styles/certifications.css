@@ -14,6 +14,12 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.cert-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
 }
 
 .cert-name {

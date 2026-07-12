@@ -1,9 +1,15 @@
+import { useReveal } from "../hooks/useReveal.js";
 import "../styles/languages.css";
 
 export default function Languages({ languages }) {
+  const reveal = useReveal();
   if (!languages?.length) return null;
   return (
-    <section className="section" id="languages">
+    <section
+      className={`section ${reveal.className}`}
+      id="languages"
+      ref={reveal.ref}
+    >
       <h2 className="section-title">Languages</h2>
       <ul className="lang-list">
         {languages.map((lang) => (

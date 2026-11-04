@@ -12,6 +12,16 @@ export default function Projects() {
           <div className="project-meta label"><span>{t(p.kind)}</span><span>{p.stack}</span></div>
           <h3 className="display h-project">{t(p.title)}</h3>
           <p>{t(p.summary)}</p>
+          {p.link && (
+            <a
+              className="project-link"
+              href={p.link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t(p.link.label)} <span aria-hidden="true">↗</span>
+            </a>
+          )}
         </article>
       ))}
     </Section>

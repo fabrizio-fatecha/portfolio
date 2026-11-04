@@ -130,8 +130,28 @@ button { font: inherit; color: inherit; }
 /* projects */
 .project { padding: 28px 0; border-top: 1px solid var(--line); }
 .project:first-child { border-top: 0; padding-top: 0; }
-.project-meta { display: flex; justify-content: space-between; gap: 16px; }
+.project-meta {
+  display: flex; justify-content: space-between; gap: 16px;
+  margin-bottom: 14px; /* breathing room above the big title */
+}
 .project p { color: var(--muted); margin-top: 10px; max-width: 560px; }
+.project-link {
+  display: inline-block; margin-top: 18px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--accent);
+  border-bottom: 1px solid transparent;
+}
+.project-link:hover { border-bottom-color: currentColor; }
+
+/* justified body text: symmetric left/right edges.
+   Hyphenation (uses the page's lang attribute) keeps word gaps small on narrow screens. */
+.hero-intro, .panel p, .project p, .bullets li, .row-val {
+  text-align: justify;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphenate-limit-chars: 7 3 3;
+}
+.job-role, .job-company { text-align: left; hyphens: manual; }
 
 /* certifications */
 .cert-heading { margin-bottom: 32px; }
@@ -189,5 +209,5 @@ button { font: inherit; color: inherit; }
   .cert-area { width: 100%; }
   .footer { flex-direction: column; }
   .hero-glow { width: 420px; height: 400px; }
-  .project-meta { flex-direction: column; gap: 4px; }
+  .project-meta { flex-direction: column; gap: 4px; margin-bottom: 12px; }
 }

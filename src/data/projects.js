@@ -1,4 +1,7 @@
 // To add a project: copy one object, change the values and save.
+// `link` is optional: { url, label: { en, es } }.
+const visitSite = { en: 'Visit site', es: 'Visitar sitio' }
+
 export const projects = [
   {
     title: { en: 'Core API for optimized reads', es: 'API central para lecturas optimizadas' },
@@ -7,6 +10,11 @@ export const projects = [
     summary: {
       en: 'Spring Boot API built for fast reads over a database of 50 million records.',
       es: 'API en Spring Boot pensada para lecturas rápidas sobre una base de datos de 50 millones de registros.',
+    },
+    // No trailing slash: /swagger/ returns 403, /swagger redirects to the Swagger UI.
+    link: {
+      url: 'https://api.fatecha.com.py/swagger',
+      label: { en: 'API docs (Swagger)', es: 'Documentación de la API (Swagger)' },
     },
   },
   {
@@ -21,6 +29,7 @@ export const projects = [
         'Frontend y backend de una plataforma en la nube sobre AWS. Redujo el papeleo ' +
         'físico en un 70% y los errores en el cálculo de turnos.',
     },
+    link: { url: 'https://duties-website.netlify.app/', label: visitSite },
   },
   {
     title: { en: 'Hospital triage system', es: 'Sistema de triaje hospitalario' },
@@ -34,5 +43,6 @@ export const projects = [
         'APIs REST para el flujo de pacientes. Mejoró la eficiencia de procesamiento en un 25% ' +
         'y redujo el tiempo de respuesta en un 40% con caché en Redis.',
     },
+    link: { url: 'https://vitalics.net/', label: visitSite },
   },
 ]

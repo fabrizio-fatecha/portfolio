@@ -25,6 +25,7 @@ export const profile = {
     'PostgreSQL',
     'Redis',
     'Azure',
+    'AWS',
   ],
   aboutTitle: {
     en: 'Backend with business sense.',

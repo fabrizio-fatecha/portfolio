@@ -1,0 +1,10 @@
+node_modules
+dist
+.netlify
+.DS_Store
+*.local
+.env*
+
+# Original guide (not part of the site)
+Guia_Portfolio_Vite_React.pdf
+.claude

@@ -1,42 +1,21 @@
-import { MailIcon, LinkedInIcon, GitHubIcon } from "../lib/contactIcons.jsx";
-import "../styles/contact.css";
+import Section from './Section'
+import { profile } from '../data/profile'
+import { ui } from '../data/ui'
+import { useLang } from '../i18n'
 
-export default function Contact({ profile }) {
+export default function Contact() {
+  const { t } = useLang()
   return (
-    <footer className="contact" id="contact">
-      <div className="container contact-inner">
-        <h2 className="contact-title">Get in touch</h2>
-        <div className="contact-links">
-          {profile.email && (
-            <a href={`mailto:${profile.email}`} className="contact-link">
-              <MailIcon />
-              <span>{profile.email}</span>
-            </a>
-          )}
-          {profile.linkedin && (
-            <a
-              href={profile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="contact-link"
-            >
-              <LinkedInIcon />
-              <span>LinkedIn</span>
-            </a>
-          )}
-          {profile.github && (
-            <a
-              href={profile.github}
-              target="_blank"
-              rel="noreferrer"
-              className="contact-link"
-            >
-              <GitHubIcon />
-              <span>GitHub</span>
-            </a>
-          )}
-        </div>
+    <Section id="contact" label={ui.sections.contact}>
+      <h2 className="display contact-title">{t(ui.contact.title)}</h2>
+      <a className="contact-mail" href={`mailto:${profile.email}`}>{profile.email}</a>
+      <div className="footer">
+        <nav>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+        </nav>
+        <span>© {new Date().getFullYear()} {profile.name}</span>
       </div>
-    </footer>
-  );
+    </Section>
+  )
 }

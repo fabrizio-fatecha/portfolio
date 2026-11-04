@@ -1,32 +1,18 @@
-import { useReveal } from "../hooks/useReveal.js";
-import "../styles/education.css";
+import Section from './Section'
+import { education } from '../data/education'
+import { ui } from '../data/ui'
+import { useLang } from '../i18n'
 
-export default function Education({ education }) {
-  const reveal = useReveal();
-  if (!education?.length) return null;
+export default function Education() {
+  const { t } = useLang()
   return (
-    <section
-      className={`section ${reveal.className}`}
-      id="education"
-      ref={reveal.ref}
-    >
-      <h2 className="section-title">Education</h2>
-      <div className="edu-list">
-        {education.map((item) => (
-          <article className="edu-item" key={item.degree}>
-            <div className="edu-head">
-              <h3 className="edu-degree">{item.degree}</h3>
-              <span className="edu-dates">
-                {item.startDate} – {item.endDate}
-              </span>
-            </div>
-            <p className="edu-meta">
-              {item.institution}
-              {item.location && ` · ${item.location}`}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
-  );
+    <Section id="education" label={ui.sections.education}>
+      {education.map((e, i) => (
+        <div className="row" key={i}>
+          <div className="row-key label">{t(e.key)}</div>
+          <div className="row-val">{t(e.value)}</div>
+        </div>
+      ))}
+    </Section>
+  )
 }

@@ -2,22 +2,21 @@
   command = "npm run build"
   publish = "dist"
 
-[functions]
-  directory = "netlify/functions"
+[build.environment]
+  # Vite 8 needs Node >= 20.19 / 22.12
+  NODE_VERSION = "22"
 
-# Local dev: `netlify dev` proxies Vite (targetPort) and the functions
-# server together on `port`, so /.netlify/functions/* resolves like on
-# Netlify. Plain `npm run dev` (Vite only) has no function server; live
-# fetch falls back to the cached profile.json in that case.
-[dev]
-  command = "npm run dev"
-  targetPort = 5173
-  port = 8888
+# Security headers for every response
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
-# SHEET_ID and GOOGLE_SERVICE_ACCOUNT_JSON are configured in the Netlify
-# dashboard (Site settings > Environment variables), not here.
-#
-# No catch-all SPA redirect: this is a single static page with no
-# client-side routing, and a `/* -> /index.html` rewrite shadows Vite's
-# dev-time asset requests (/src/*, /@vite/client) under `netlify dev`,
-# breaking local dev with a silently blank page.
+# Vite fingerprints everything in /assets, so it can be cached forever
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

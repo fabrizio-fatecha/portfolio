@@ -1,56 +1,18 @@
-import { useReveal } from "../hooks/useReveal.js";
-import { useToggle } from "../hooks/useToggle.js";
-import SkillIcon from "../lib/skillIcons.jsx";
-import ChevronIcon from "../lib/ChevronIcon.jsx";
-import "../styles/accordion.css";
-import "../styles/skills.css";
+import Section from './Section'
+import { skills } from '../data/skills'
+import { ui } from '../data/ui'
+import { useLang } from '../i18n'
 
-function SkillCard({ group }) {
-  const [expanded, toggle] = useToggle(false);
+export default function Skills() {
+  const { t } = useLang()
   return (
-    <div className="skills-card">
-      <button
-        type="button"
-        className="accordion-trigger skills-card-head"
-        onClick={toggle}
-        aria-expanded={expanded}
-      >
-        <span className="skills-card-head-label">
-          <span className="skills-icon">
-            <SkillIcon category={group.category} />
-          </span>
-          <h3 className="skills-category">{group.category}</h3>
-        </span>
-        <ChevronIcon expanded={expanded} />
-      </button>
-      <div className={`expandable${expanded ? " expanded" : ""}`}>
-        <div className="expandable-inner">
-          <ul className="skills-items">
-            {group.items.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+    <Section id="skills" label={ui.sections.skills}>
+      {skills.map((s, i) => (
+        <div className="row" key={i}>
+          <div className="row-key label">{t(s.area)}</div>
+          <div className="row-val">{t(s.items)}</div>
         </div>
-      </div>
-    </div>
-  );
-}
-
-export default function Skills({ skills }) {
-  const reveal = useReveal();
-  if (!skills?.length) return null;
-  return (
-    <section
-      className={`section ${reveal.className}`}
-      id="skills"
-      ref={reveal.ref}
-    >
-      <h2 className="section-title">Skills</h2>
-      <div className="skills-grid">
-        {skills.map((group) => (
-          <SkillCard group={group} key={group.category} />
-        ))}
-      </div>
-    </section>
-  );
+      ))}
+    </Section>
+  )
 }

@@ -2,7 +2,7 @@
 export const profile = {
   name: 'Fabrizio Giovanni Fatecha Vera',
   email: 'fatechafabrizio@gmail.com',
-  linkedin: 'https://linkedin.com/in/fabrizio-fatecha',
+  linkedin: 'https://www.linkedin.com/in/fabrizio-fatecha/',
   github: 'https://github.com/fabrizio-fatecha',
   kicker: {
     en: 'Backend developer · Asunción, Paraguay',

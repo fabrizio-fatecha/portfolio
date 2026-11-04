@@ -34,8 +34,15 @@ export const ui = {
     certifications: { en: '06 — Certifications', es: '06 — Certificaciones' },
     contact: { en: '07 — Contact', es: '07 — Contacto' },
   },
-  certifications: {
-    title: { en: 'Continuous learning.', es: 'Aprendizaje continuo.' },
+  projects: {
+    more: { en: 'More web projects', es: 'Más proyectos web' },
+  },
+  // Big heading shown at the top of each section's content column.
+  sectionTitles: {
+    experience: { en: 'Hands-on experience.', es: 'Experiencia práctica.' },
+    skills: { en: 'Tools of the trade.', es: 'Herramientas del oficio.' },
+    education: { en: 'Academic foundation.', es: 'Base académica.' },
+    certifications: { en: 'Continuous learning.', es: 'Aprendizaje continuo.' },
   },
   contact: {
     // Keep ES words short: the title is 170px Bebas Neue and can't wrap mid-word.

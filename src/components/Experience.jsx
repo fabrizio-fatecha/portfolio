@@ -6,7 +6,7 @@ import { useLang } from '../i18n'
 export default function Experience() {
   const { t } = useLang()
   return (
-    <Section id="experience" label={ui.sections.experience}>
+    <Section id="experience" label={ui.sections.experience} title={ui.sectionTitles.experience}>
       {experience.map((j, i) => (
         <div className="row" key={i}>
           <div className="row-key label">{t(j.period)}</div>

@@ -6,8 +6,11 @@ import { useLang } from '../i18n'
 export default function Certifications() {
   const { t } = useLang()
   return (
-    <Section id="certifications" label={ui.sections.certifications}>
-      <h2 className="display h-section cert-heading">{t(ui.certifications.title)}</h2>
+    <Section
+      id="certifications"
+      label={ui.sections.certifications}
+      title={ui.sectionTitles.certifications}
+    >
       {certifications.map((c, i) => (
         <div className="cert" key={i}>
           <span className="cert-area label">{t(c.area)}</span>

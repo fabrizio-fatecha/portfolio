@@ -46,3 +46,52 @@ export const projects = [
     link: { url: 'https://vitalics.net/', label: visitSite },
   },
 ]
+
+// Smaller projects, shown as compact rows under "More web projects".
+// The three agency sites are concept/demo builds (placeholder contact data and
+// fictional brands), so they are labelled as such. Don't present them as client work.
+const concept = { en: 'Concept website', es: 'Sitio conceptual' }
+const demoNote = { en: 'Demo content.', es: 'Contenido de demostración.' }
+
+export const webProjects = [
+  {
+    title: { en: 'Valle de Flores', es: 'Valle de Flores' },
+    kind: { en: 'Interactive 3D experience', es: 'Experiencia 3D interactiva' },
+    stack: 'WebGL',
+    summary: {
+      en: 'A flower valley you can explore in 3D from the browser: walk with WASD or the arrow keys, look around with the mouse and run with Shift.',
+      es: 'Un valle de flores en 3D que se recorre desde el navegador: se camina con WASD o las flechas, se mira con el mouse y se corre con Shift.',
+    },
+    link: { url: 'https://sunflowersparaguay.netlify.app/', label: visitSite },
+  },
+  {
+    title: { en: 'Real estate landing page', es: 'Landing page inmobiliaria' },
+    kind: concept,
+    stack: 'React',
+    summary: {
+      en: `Landing page for a real estate agency: hero, featured listings, benefits section and contact form. ${demoNote.en}`,
+      es: `Landing page para una inmobiliaria: hero, propiedades destacadas, sección de beneficios y formulario de contacto. ${demoNote.es}`,
+    },
+    link: { url: 'https://real-st-agency.netlify.app/', label: visitSite },
+  },
+  {
+    title: { en: 'Sneaker store landing page', es: 'Landing page de tienda de zapatillas' },
+    kind: concept,
+    stack: 'React',
+    summary: {
+      en: `Landing page for a sneaker brand: collection showcase, product features and newsletter signup. ${demoNote.en}`,
+      es: `Landing page para una marca de zapatillas: colección, características del producto y suscripción al newsletter. ${demoNote.es}`,
+    },
+    link: { url: 'https://shoes-agency.netlify.app/', label: visitSite },
+  },
+  {
+    title: { en: 'Customs brokerage website', es: 'Sitio de despacho aduanero' },
+    kind: concept,
+    stack: 'React',
+    summary: {
+      en: `Corporate website for a customs brokerage: services, about, team and contact form. ${demoNote.en}`,
+      es: `Sitio corporativo para un despacho aduanero: servicios, nosotros, equipo y formulario de contacto. ${demoNote.es}`,
+    },
+    link: { url: 'https://customs-agency.netlify.app/', label: visitSite },
+  },
+]

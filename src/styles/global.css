@@ -151,10 +151,18 @@ button { font: inherit; color: inherit; }
   -webkit-hyphens: auto;
   hyphenate-limit-chars: 7 3 3;
 }
-.job-role, .job-company { text-align: left; hyphens: manual; }
+.job-role, .job-company, .mini-title, .mini-meta { text-align: left; hyphens: manual; }
+
+/* "More web projects": compact rows below the featured projects */
+.more { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+.more-heading { margin-bottom: 24px; font-weight: 400; }
+.mini-title { font-size: 18px; font-weight: 500; }
+.mini-meta { margin-top: 4px; }
+.mini-summary { color: var(--muted); font-size: 15px; margin-top: 10px; }
+.more .project-link { margin-top: 14px; }
 
 /* certifications */
-.cert-heading { margin-bottom: 32px; }
+.section-title { margin-bottom: 32px; }
 .cert {
   display: flex; gap: 24px; align-items: baseline;
   padding: 16px 0; border-top: 1px solid var(--line);

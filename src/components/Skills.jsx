@@ -6,7 +6,7 @@ import { useLang } from '../i18n'
 export default function Skills() {
   const { t } = useLang()
   return (
-    <Section id="skills" label={ui.sections.skills}>
+    <Section id="skills" label={ui.sections.skills} title={ui.sectionTitles.skills}>
       {skills.map((s, i) => (
         <div className="row" key={i}>
           <div className="row-key label">{t(s.area)}</div>

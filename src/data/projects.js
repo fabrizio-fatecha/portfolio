@@ -55,16 +55,6 @@ const demoNote = { en: 'Demo content.', es: 'Contenido de demostración.' }
 
 export const webProjects = [
   {
-    title: { en: 'Valle de Flores', es: 'Valle de Flores' },
-    kind: { en: 'Interactive 3D experience', es: 'Experiencia 3D interactiva' },
-    stack: 'WebGL',
-    summary: {
-      en: 'A flower valley you can explore in 3D from the browser: walk with WASD or the arrow keys, look around with the mouse and run with Shift.',
-      es: 'Un valle de flores en 3D que se recorre desde el navegador: se camina con WASD o las flechas, se mira con el mouse y se corre con Shift.',
-    },
-    link: { url: 'https://sunflowersparaguay.netlify.app/', label: visitSite },
-  },
-  {
     title: { en: 'Real estate landing page', es: 'Landing page inmobiliaria' },
     kind: concept,
     stack: 'React',

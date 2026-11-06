@@ -29,18 +29,18 @@ export const ui = {
   },
   sections: {
     profile: { en: '01 — Profile', es: '01 — Perfil' },
-    projects: { en: '02 — Projects', es: '02 — Proyectos' },
-    experience: { en: '03 — Experience', es: '03 — Experiencia' },
-    skills: { en: '04 — Skills', es: '04 — Habilidades' },
-    education: { en: '05 — Education', es: '05 — Educación' },
-    certifications: { en: '06 — Certifications', es: '06 — Certificaciones' },
-    security: { en: '07 — Security', es: '07 — Seguridad' },
+    security: { en: '02 — Security', es: '02 — Seguridad' },
+    projects: { en: '03 — Projects', es: '03 — Proyectos' },
+    experience: { en: '04 — Experience', es: '04 — Experiencia' },
+    skills: { en: '05 — Skills', es: '05 — Habilidades' },
+    education: { en: '06 — Education', es: '06 — Educación' },
+    certifications: { en: '07 — Certifications', es: '07 — Certificaciones' },
     contact: { en: '08 — Contact', es: '08 — Contacto' },
   },
-  // Teaser panel that links to the /pentesting/ page.
+  // Teaser panel (right below Profile) that links to the /pentesting/ page.
   security: {
-    prompt: 'fabrizio@sec:~$ ./basic-pentest',
-    title: { en: 'Basic pentesting services.', es: 'Servicios de pentesting básico.' },
+    prompt: 'fabrizio@sec:~$ ./pentest',
+    title: { en: 'Pentesting services.', es: 'Servicios de pentesting.' },
     text: {
       en: 'Methodical, controlled security testing of web apps, networks and servers, delivered with clear executive and technical reports.',
       es: 'Pruebas de seguridad metódicas y controladas para aplicaciones web, redes y servidores, con informes ejecutivo y técnico claros.',

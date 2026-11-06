@@ -189,7 +189,7 @@ button { font: inherit; color: inherit; }
 .nav ul .nav-accent a:hover { color: #00a566; }
 
 /* security teaser panel (links to /pentesting/) */
-.sec-wrap { margin-bottom: 72px; }
+.sec-wrap { margin-top: 24px; } /* sits right below the Profile panel */
 .panel.sec-panel {
   background: #04080a; border: 1px solid #123a2c;
   box-shadow: 0 0 60px rgba(0, 255, 156, .07), inset 0 0 80px rgba(0, 255, 156, .03);

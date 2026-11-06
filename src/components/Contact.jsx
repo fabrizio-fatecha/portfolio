@@ -13,6 +13,7 @@ export default function Contact() {
         <nav>
           <a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
           <a href={profile.github} target="_blank" rel="noreferrer">GitHub</a>
+          <a href="/pentesting/">Pentesting</a>
         </nav>
         <span>© {new Date().getFullYear()} {profile.name}</span>
       </div>

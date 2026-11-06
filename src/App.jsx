@@ -6,6 +6,7 @@ import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Education from './components/Education'
 import Certifications from './components/Certifications'
+import SecurityTeaser from './components/SecurityTeaser'
 import Contact from './components/Contact'
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
         <Skills />
         <Education />
         <Certifications />
+        <SecurityTeaser />
         <Contact />
       </main>
     </>

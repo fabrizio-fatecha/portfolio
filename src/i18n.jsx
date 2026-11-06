@@ -31,7 +31,8 @@ export function pick(value, lang) {
 
 const LangContext = createContext(null)
 
-export function LangProvider({ children }) {
+// `meta` = { title, description } as { en, es } objects; each page passes its own.
+export function LangProvider({ children, meta = ui.meta }) {
   const [lang, setLangState] = useState(initialLang)
 
   const setLang = useCallback((next) => {
@@ -46,11 +47,11 @@ export function LangProvider({ children }) {
 
   useEffect(() => {
     document.documentElement.lang = lang
-    document.title = ui.meta.title[lang]
+    document.title = meta.title[lang]
     document
       .querySelector('meta[name="description"]')
-      ?.setAttribute('content', ui.meta.description[lang])
-  }, [lang])
+      ?.setAttribute('content', meta.description[lang])
+  }, [lang, meta])
 
   const value = useMemo(
     () => ({ lang, setLang, t: (v) => pick(v, lang) }),

@@ -18,6 +18,8 @@ export const ui = {
       { href: '#experience', text: { en: 'Experience', es: 'Experiencia' } },
       { href: '#certifications', text: { en: 'Certifications', es: 'Certificaciones' } },
       { href: '#contact', text: { en: 'Contact', es: 'Contacto' } },
+      // Separate page. Hidden on phones (no room), where the Security panel links to it.
+      { href: '/pentesting/', text: { en: 'Pentesting', es: 'Pentesting' }, accent: true },
     ],
     language: { en: 'Language', es: 'Idioma' },
   },
@@ -32,7 +34,18 @@ export const ui = {
     skills: { en: '04 — Skills', es: '04 — Habilidades' },
     education: { en: '05 — Education', es: '05 — Educación' },
     certifications: { en: '06 — Certifications', es: '06 — Certificaciones' },
-    contact: { en: '07 — Contact', es: '07 — Contacto' },
+    security: { en: '07 — Security', es: '07 — Seguridad' },
+    contact: { en: '08 — Contact', es: '08 — Contacto' },
+  },
+  // Teaser panel that links to the /pentesting/ page.
+  security: {
+    prompt: 'fabrizio@sec:~$ ./basic-pentest',
+    title: { en: 'Basic pentesting services.', es: 'Servicios de pentesting básico.' },
+    text: {
+      en: 'Methodical, controlled security testing of web apps, networks and servers, delivered with clear executive and technical reports.',
+      es: 'Pruebas de seguridad metódicas y controladas para aplicaciones web, redes y servidores, con informes ejecutivo y técnico claros.',
+    },
+    cta: { en: 'Explore the service', es: 'Conocer el servicio' },
   },
   projects: {
     more: { en: 'More web projects', es: 'Más proyectos web' },

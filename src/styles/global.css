@@ -183,6 +183,27 @@ button { font: inherit; color: inherit; }
 }
 .footer nav { display: flex; gap: 20px; }
 
+/* nav link to the separate /pentesting/ page */
+.nav ul .nav-accent a { color: #00794a; font-weight: 500; }
+.nav ul .nav-accent a::before { content: '>_ '; font-family: var(--mono); }
+.nav ul .nav-accent a:hover { color: #00a566; }
+
+/* security teaser panel (links to /pentesting/) */
+.sec-wrap { margin-bottom: 72px; }
+.panel.sec-panel {
+  background: #04080a; border: 1px solid #123a2c;
+  box-shadow: 0 0 60px rgba(0, 255, 156, .07), inset 0 0 80px rgba(0, 255, 156, .03);
+}
+.sec-panel .label { color: #00c97a; }
+.panel .sec-prompt { font-family: var(--mono); font-size: 13px; color: #00ff9c; margin: 0 0 14px; }
+.sec-btn {
+  display: inline-block; margin-top: 28px; padding: 10px 18px; border-radius: 10px;
+  font-family: var(--mono); font-size: 13px; font-weight: 600; letter-spacing: .04em;
+  color: #04080a; background: #00ff9c;
+  transition: box-shadow .15s, transform .15s;
+}
+.sec-btn:hover { box-shadow: 0 0 24px rgba(0, 255, 156, .45); transform: translateY(-1px); }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
@@ -204,6 +225,7 @@ button { font: inherit; color: inherit; }
   .nav-right { display: contents; }
   .lang { order: 2; }
   .nav ul { order: 3; width: 100%; justify-content: space-between; gap: 14px; font-size: 12px; }
+  .nav ul .nav-accent { display: none; } /* no room on phones: the Security panel links to the page */
   .hero { padding: 40px 0 64px; }
   .hero-title { font-size: 68px; }
   .h-section { font-size: 56px; }

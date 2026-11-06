@@ -28,19 +28,27 @@ Every translatable value is an `{ en, es }` object. Values that are the same in 
 | `experience.js` | Work experience |
 | `skills.js` / `education.js` | Skills and education |
 | `certifications.js` | Certifications. Copy a block and change the title, area and issuer |
-| `ui.js` | Interface text: nav, buttons, section labels and titles, page title and description |
+| `ui.js` | Interface text: nav, buttons, section labels and titles, page title and description, the Security teaser |
+| `pentest.js` | All the content of the `/pentesting/` page (service, scope, method, deliverables, benefits, contact) |
 
 ## Project structure
 
 ```
+index.html                      portfolio page (/)
+pentesting/index.html           pentesting services page (/pentesting/), dark theme
 src/
-  main.jsx, App.jsx, i18n.jsx   entry point and the EN/ES language context
-  styles/global.css             design tokens, layout and responsive rules
+  main.jsx, App.jsx             entry point and layout of the portfolio
+  pentesting.jsx                entry point of the pentesting page
+  i18n.jsx                      EN/ES language context shared by both pages
+  styles/global.css             portfolio: design tokens, layout and responsive rules
+  styles/pentest.css            pentesting page: its own dark "terminal" theme
   data/                         all editable content (see above)
-  components/                   one component per section
-public/                         favicon and Open Graph image
+  components/                   one component per section (components/pentest/ for the pentesting page)
+public/                         favicons and Open Graph images
 netlify.toml                    build settings and response headers
 ```
+
+The site has two HTML entry pages (multi-page Vite build); both share the language switcher and the fonts.
 
 ## Deploy
 

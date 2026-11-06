@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -5,6 +6,8 @@ import react from '@vitejs/plugin-react'
 // Netlify sets `URL` automatically at build time (custom domain if configured).
 // For a local build you can pass it yourself: VITE_SITE_URL=https://example.com npm run build
 const siteUrl = (process.env.URL || process.env.VITE_SITE_URL || '').replace(/\/$/, '')
+
+const page = (path) => fileURLToPath(new URL(path, import.meta.url))
 
 export default defineConfig({
   plugins: [
@@ -14,4 +17,13 @@ export default defineConfig({
       transformIndexHtml: (html) => html.replaceAll('__SITE_URL__', siteUrl),
     },
   ],
+  build: {
+    // Two entry pages: the portfolio (/) and the pentesting services page (/pentesting/).
+    rollupOptions: {
+      input: {
+        main: page('./index.html'),
+        pentesting: page('./pentesting/index.html'),
+      },
+    },
+  },
 })
